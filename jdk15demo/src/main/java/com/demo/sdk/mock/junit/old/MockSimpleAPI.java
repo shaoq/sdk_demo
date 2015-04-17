@@ -2,14 +2,14 @@
  * Alipay.com Inc.
  * Copyright (c) 2004-2015 All Rights Reserved.
  */
-package com.demo.sdk.mock.junit.std;
+package com.demo.sdk.mock.junit.old;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import com.alipay.api.AlipayClient;
-import com.alipay.api.request.AlipayMobilePublicStdMockSimplemodelApiRequest;
-import com.alipay.api.response.AlipayMobilePublicStdMockSimplemodelApiResponse;
+import com.alipay.api.request.AlipayMobilePublicMockSimplemodelApiRequest;
+import com.alipay.api.response.AlipayMobilePublicMockSimplemodelApiResponse;
 import com.demo.sdk.std.mock.model.SimpleMockModel;
 import com.demo.sdk.util.AlipayClientUtil;
 import com.demo.sdk.util.LoggerUtil;
@@ -18,30 +18,29 @@ import com.demo.sdk.util.ModelCompareUtil;
 /**
  * 
  * @author jiehua
- * @version $Id: StdMockSimpleAPI.java, v 0.1 2015-4-17 下午5:05:34 jiehua Exp $
+ * @version $Id: MockSimpleAPI.java, v 0.1 2015-4-17 下午5:05:34 jiehua Exp $
  */
-public class StdMockSimpleAPI {
+public class MockSimpleAPI {
 
     @Test
     public void testJSONSimpleAPI() {
 
         AlipayClient alipayClient = AlipayClientUtil.getJSONInStance();
 
-        AlipayMobilePublicStdMockSimplemodelApiRequest request = new AlipayMobilePublicStdMockSimplemodelApiRequest();
+        AlipayMobilePublicMockSimplemodelApiRequest request = new AlipayMobilePublicMockSimplemodelApiRequest();
         request.setBizContent("");
 
         try {
 
-            AlipayMobilePublicStdMockSimplemodelApiResponse response = alipayClient
-                .execute(request);
+            AlipayMobilePublicMockSimplemodelApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
             LoggerUtil.info("JSON 成功：");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
-            Assert.assertEquals("10000", response.getErrorCode());
-            Assert.assertEquals("Success", response.getMsg());
+            Assert.assertNull(response.getErrorCode());
+            Assert.assertNull(response.getMsg());
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
@@ -64,23 +63,22 @@ public class StdMockSimpleAPI {
 
         AlipayClient alipayClient = AlipayClientUtil.getJSONInStance();
 
-        AlipayMobilePublicStdMockSimplemodelApiRequest request = new AlipayMobilePublicStdMockSimplemodelApiRequest();
+        AlipayMobilePublicMockSimplemodelApiRequest request = new AlipayMobilePublicMockSimplemodelApiRequest();
         request.setBizContent("false");
 
         try {
 
-            AlipayMobilePublicStdMockSimplemodelApiResponse response = alipayClient
-                .execute(request);
+            AlipayMobilePublicMockSimplemodelApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
             LoggerUtil.info("JSON 失败：");
             LoggerUtil.info(response.getBody());
 
-            Assert.assertFalse(response.isSuccess());
-            Assert.assertEquals("40004", response.getErrorCode());
-            Assert.assertEquals("Business Failed", response.getMsg());
-            Assert.assertNotNull(response.getSubCode());
-            Assert.assertNotNull(response.getSubMsg());
+            Assert.assertTrue(response.isSuccess());
+            Assert.assertNull(response.getErrorCode());
+            Assert.assertNull(response.getMsg());
+            Assert.assertNull(response.getSubCode());
+            Assert.assertNull(response.getSubMsg());
 
         } catch (Exception e) {
 
@@ -94,21 +92,20 @@ public class StdMockSimpleAPI {
 
         AlipayClient alipayClient = AlipayClientUtil.getXMLInStance();
 
-        AlipayMobilePublicStdMockSimplemodelApiRequest request = new AlipayMobilePublicStdMockSimplemodelApiRequest();
+        AlipayMobilePublicMockSimplemodelApiRequest request = new AlipayMobilePublicMockSimplemodelApiRequest();
         request.setBizContent("");
 
         try {
 
-            AlipayMobilePublicStdMockSimplemodelApiResponse response = alipayClient
-                .execute(request);
+            AlipayMobilePublicMockSimplemodelApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
             LoggerUtil.info("XML 成功：");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
-            Assert.assertEquals("10000", response.getErrorCode());
-            Assert.assertEquals("Success", response.getMsg());
+            Assert.assertNull(response.getErrorCode());
+            Assert.assertNull(response.getMsg());
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
@@ -129,23 +126,22 @@ public class StdMockSimpleAPI {
 
         AlipayClient alipayClient = AlipayClientUtil.getXMLInStance();
 
-        AlipayMobilePublicStdMockSimplemodelApiRequest request = new AlipayMobilePublicStdMockSimplemodelApiRequest();
+        AlipayMobilePublicMockSimplemodelApiRequest request = new AlipayMobilePublicMockSimplemodelApiRequest();
         request.setBizContent("false");
 
         try {
 
-            AlipayMobilePublicStdMockSimplemodelApiResponse response = alipayClient
-                .execute(request);
+            AlipayMobilePublicMockSimplemodelApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
             LoggerUtil.info("XML 失败：");
             LoggerUtil.info(response.getBody());
 
-            Assert.assertFalse(response.isSuccess());
-            Assert.assertEquals("40004", response.getErrorCode());
-            Assert.assertEquals("Business Failed", response.getMsg());
-            Assert.assertNotNull(response.getSubCode());
-            Assert.assertNotNull(response.getSubMsg());
+            Assert.assertTrue(response.isSuccess());
+            Assert.assertNull(response.getErrorCode());
+            Assert.assertNull(response.getMsg());
+            Assert.assertNull(response.getSubCode());
+            Assert.assertNull(response.getSubMsg());
 
         } catch (Exception e) {
 

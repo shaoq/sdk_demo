@@ -25,6 +25,8 @@ public class ModelCompareUtil {
     public static void assertPlaintModel(com.demo.sdk.std.mock.model.SimpleMockModel expiredModel,
                                          SimpleMockModel actModel) {
 
+        Assert.assertNotNull(actModel);
+
         Assert.assertEquals(expiredModel.getPrice_num() + "", actModel.getPriceNum());
         Assert.assertEquals(expiredModel.getTrade_no(), actModel.getTradeNo());
         Assert.assertEquals(expiredModel.getCount_items(), actModel.getCountItems().intValue());
@@ -41,6 +43,8 @@ public class ModelCompareUtil {
      */
     public static void assertComplexModel(com.demo.sdk.std.mock.model.ComplextMockModel expectModel,
                                           ComplextMockModel actModel) {
+
+        Assert.assertNotNull(actModel);
 
         Assert.assertEquals(expectModel.getBiz_type(), actModel.getBizType());
         Assert.assertEquals(expectModel.getBiz_num(), actModel.getBizNum().longValue());
