@@ -50,12 +50,12 @@ public class MockListPrimAPI {
             // 验证结果
             List<String> userIdList = response.getUserIdList();
 
-            List<String> user_id_list = new ArrayList<String>();
-            user_id_list.add("1222");
-            user_id_list.add("1444");
+            List<String> user_id_list1 = new ArrayList<String>();
+            user_id_list1.add("1222");
+            user_id_list1.add("1444");
 
             for (int i = 0; i < userIdList.size(); i++) {
-                Assert.assertEquals(userIdList.get(i), user_id_list.get(i));
+                Assert.assertEquals(user_id_list1.get(i), userIdList.get(i));
             }
 
         } catch (Exception e) {

@@ -46,7 +46,7 @@ public class MockSimpleAPI {
 
             // 验证结果
             ModelCompareUtil.assertPlaintModel(SimpleMockModel.getInstance(),
-                response.getBizModel());
+                response.getSimpleMockModel());
 
         } catch (Exception e) {
 
@@ -111,7 +111,7 @@ public class MockSimpleAPI {
 
             // 验证结果
             ModelCompareUtil.assertPlaintModel(SimpleMockModel.getInstance(),
-                response.getBizModel());
+                response.getSimpleMockModel());
 
         } catch (Exception e) {
 

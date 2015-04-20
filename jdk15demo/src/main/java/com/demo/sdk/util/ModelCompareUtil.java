@@ -7,6 +7,7 @@ package com.demo.sdk.util;
 import junit.framework.Assert;
 
 import com.alipay.api.domain.ComplextMockModel;
+import com.alipay.api.domain.OldComplextMockModel;
 import com.alipay.api.domain.SimpleMockModel;
 
 /**
@@ -50,6 +51,24 @@ public class ModelCompareUtil {
         Assert.assertEquals(expectModel.getBiz_num(), actModel.getBizNum().longValue());
 
         assertPlaintModel(expectModel.getBiz_model(), actModel.getBizModel());
+
+    }
+
+    /**
+     * 
+     * 
+     * @param expectModel
+     * @param actModel
+     */
+    public static void assertOldComplexModel(com.demo.sdk.std.mock.model.ComplextMockModel expectModel,
+                                             OldComplextMockModel actModel) {
+
+        Assert.assertNotNull(actModel);
+
+        Assert.assertEquals(expectModel.getBiz_type(), actModel.getBizType());
+        Assert.assertEquals(expectModel.getBiz_num(), actModel.getBizNum().longValue());
+
+        assertPlaintModel(expectModel.getBiz_model(), actModel.getSimpleMockModel());
 
     }
 

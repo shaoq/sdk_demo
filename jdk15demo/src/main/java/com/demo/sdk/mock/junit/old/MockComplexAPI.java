@@ -52,7 +52,8 @@ public class MockComplexAPI {
 
             Assert.assertEquals(complexModel.getBiz_num(), response.getBizNum().longValue());
             Assert.assertEquals(complexModel.getBiz_type(), response.getBizType());
-            ModelCompareUtil.assertPlaintModel(complexModel.getBiz_model(), response.getBizModel());
+            ModelCompareUtil.assertPlaintModel(complexModel.getBiz_model(),
+                response.getSimpleMockModel());
 
         } catch (Exception e) {
 
@@ -122,7 +123,8 @@ public class MockComplexAPI {
 
             Assert.assertEquals(complexModel.getBiz_num(), response.getBizNum().longValue());
             Assert.assertEquals(complexModel.getBiz_type(), response.getBizType());
-            ModelCompareUtil.assertPlaintModel(complexModel.getBiz_model(), response.getBizModel());
+            ModelCompareUtil.assertPlaintModel(complexModel.getBiz_model(),
+                response.getSimpleMockModel());
 
         } catch (Exception e) {
 

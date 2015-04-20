@@ -11,7 +11,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 import com.alipay.api.AlipayClient;
-import com.alipay.api.domain.ComplextMockModel;
+import com.alipay.api.domain.OldComplextMockModel;
 import com.alipay.api.request.AlipayMobilePublicMockListcomplexmodelApiRequest;
 import com.alipay.api.response.AlipayMobilePublicMockListcomplexmodelApiResponse;
 import com.demo.sdk.util.AlipayClientUtil;
@@ -48,7 +48,7 @@ public class MockListComplexAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            List<ComplextMockModel> cmModelList = response.getCmModelList();
+            List<OldComplextMockModel> cmModelList = response.getCmModelList();
             com.demo.sdk.std.mock.model.ComplextMockModel instance00 = com.demo.sdk.std.mock.model.ComplextMockModel
                 .getInstance();
             com.demo.sdk.std.mock.model.ComplextMockModel instance01 = com.demo.sdk.std.mock.model.ComplextMockModel
@@ -56,8 +56,8 @@ public class MockListComplexAPI {
 
             // 验证结果
             Assert.assertEquals(2, cmModelList.size());
-            ModelCompareUtil.assertComplexModel(instance00, cmModelList.get(0));
-            ModelCompareUtil.assertComplexModel(instance01, cmModelList.get(1));
+            ModelCompareUtil.assertOldComplexModel(instance00, cmModelList.get(0));
+            ModelCompareUtil.assertOldComplexModel(instance01, cmModelList.get(1));
 
         } catch (Exception e) {
 
@@ -123,7 +123,7 @@ public class MockListComplexAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            List<ComplextMockModel> cmModelList = response.getCmModelList();
+            List<OldComplextMockModel> cmModelList = response.getCmModelList();
             com.demo.sdk.std.mock.model.ComplextMockModel instance00 = com.demo.sdk.std.mock.model.ComplextMockModel
                 .getInstance();
             com.demo.sdk.std.mock.model.ComplextMockModel instance01 = com.demo.sdk.std.mock.model.ComplextMockModel
@@ -131,8 +131,8 @@ public class MockListComplexAPI {
 
             // 验证结果
             Assert.assertEquals(2, cmModelList.size());
-            ModelCompareUtil.assertComplexModel(instance00, cmModelList.get(0));
-            ModelCompareUtil.assertComplexModel(instance01, cmModelList.get(1));
+            ModelCompareUtil.assertOldComplexModel(instance00, cmModelList.get(0));
+            ModelCompareUtil.assertOldComplexModel(instance01, cmModelList.get(1));
 
         } catch (Exception e) {
 

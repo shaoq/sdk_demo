@@ -18,12 +18,36 @@ import com.alipay.api.DefaultAlipayClient;
 public class AlipayClientUtil {
 
     /**
-     * 
+     * JSON客户端
      */
-    private static final AlipayClient ALIPAY_CLIENT = new DefaultAlipayClient(
-                                                        GateWayUtils.GATEWAY_URL,
-                                                        GateWayUtils.APP_ID,
-                                                        GateWayUtils.PRIVATE_KEY);
+    private static final AlipayClient ALIPAY_JSON_CLIENT = new DefaultAlipayClient(
+                                                             GateWayUtils.GATEWAY_URL,
+                                                             GateWayUtils.APP_ID,
+                                                             GateWayUtils.PRIVATE_KEY);
+
+    /**
+     * XML客户端
+     */
+    private static final AlipayClient ALIPAY_XML_CLIENT  = new DefaultAlipayClient(
+                                                             GateWayUtils.GATEWAY_URL,
+                                                             GateWayUtils.APP_ID,
+                                                             GateWayUtils.PRIVATE_KEY);
+
+    static {
+
+        try {
+
+            Field declaredField = ALIPAY_XML_CLIENT.getClass().getDeclaredField("format");
+
+            declaredField.setAccessible(true);
+            declaredField.set(ALIPAY_XML_CLIENT, AlipayConstants.FORMAT_XML);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+    }
 
     /**
      * 获取网关实例
@@ -32,7 +56,7 @@ public class AlipayClientUtil {
      */
     public static AlipayClient getJSONInStance() {
 
-        return ALIPAY_CLIENT;
+        return ALIPAY_JSON_CLIENT;
     }
 
     /**
@@ -42,18 +66,7 @@ public class AlipayClientUtil {
      */
     public static AlipayClient getXMLInStance() {
 
-        try {
-
-            Field declaredField = ALIPAY_CLIENT.getClass().getDeclaredField("format");
-
-            declaredField.setAccessible(true);
-            declaredField.set(ALIPAY_CLIENT, AlipayConstants.FORMAT_XML);
-
-        } catch (Exception e) {
-
-        }
-
-        return ALIPAY_CLIENT;
+        return ALIPAY_XML_CLIENT;
     }
 
 }

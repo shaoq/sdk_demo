@@ -55,6 +55,8 @@ public class StdMockComplexAPI {
             Assert.assertEquals(complexModel.getBiz_type(), response.getBizType());
             ModelCompareUtil.assertPlaintModel(complexModel.getBiz_model(), response.getBizModel());
 
+            //
+
         } catch (Exception e) {
 
             e.printStackTrace();

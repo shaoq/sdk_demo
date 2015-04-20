@@ -11,13 +11,14 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 import com.alipay.api.AlipayClient;
-import com.alipay.api.domain.ComplextMockModel;
-import com.alipay.api.domain.ListListComplexMockModel;
+import com.alipay.api.domain.OldComplextMockModel;
+import com.alipay.api.domain.OldListListComplexMockModel;
 import com.alipay.api.request.AlipayMobilePublicMockListcmlistApiRequest;
 import com.alipay.api.response.AlipayMobilePublicMockListcmlistApiResponse;
 import com.demo.sdk.util.AlipayClientUtil;
 import com.demo.sdk.util.LoggerUtil;
 import com.demo.sdk.util.ModelCompareUtil;
+import com.demo.sdk.util.ResultSignUtil;
 
 /**
  * 
@@ -48,22 +49,26 @@ public class MockListListComplexAPI {
             Assert.assertNull(response.getSubMsg());
 
             // 验证结果
-            List<ListListComplexMockModel> listCmList = response.getListCmList();
+            List<OldListListComplexMockModel> listCmList = response.getListCmList();
             Assert.assertEquals(2, listCmList.size());
 
-            List<ComplextMockModel> cmList0 = listCmList.get(0).getCmList();
+            List<OldComplextMockModel> cmList0 = listCmList.get(0).getCmList();
             Assert.assertEquals(2, cmList0.size());
-            ModelCompareUtil.assertComplexModel(
+            ModelCompareUtil.assertOldComplexModel(
                 com.demo.sdk.std.mock.model.ComplextMockModel.getInstance(), cmList0.get(0));
-            ModelCompareUtil.assertComplexModel(
+            ModelCompareUtil.assertOldComplexModel(
                 com.demo.sdk.std.mock.model.ComplextMockModel.getInstance(), cmList0.get(1));
 
-            List<ComplextMockModel> cmList1 = listCmList.get(1).getCmList();
+            List<OldComplextMockModel> cmList1 = listCmList.get(1).getCmList();
             Assert.assertEquals(2, cmList1.size());
-            ModelCompareUtil.assertComplexModel(
+            ModelCompareUtil.assertOldComplexModel(
                 com.demo.sdk.std.mock.model.ComplextMockModel.getInstance(), cmList1.get(0));
-            ModelCompareUtil.assertComplexModel(
+            ModelCompareUtil.assertOldComplexModel(
                 com.demo.sdk.std.mock.model.ComplextMockModel.getInstance(), cmList1.get(1));
+
+            // 校验签名
+
+            ResultSignUtil.checkJSONResult(response.getBody(), request);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -93,6 +98,8 @@ public class MockListListComplexAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
+            ResultSignUtil.checkJSONResult(response.getBody(), request);
+
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail();
@@ -112,7 +119,7 @@ public class MockListListComplexAPI {
             AlipayMobilePublicMockListcmlistApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON 成功：");
+            LoggerUtil.info("XML 成功：");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -122,22 +129,24 @@ public class MockListListComplexAPI {
             Assert.assertNull(response.getSubMsg());
 
             // 验证结果
-            List<ListListComplexMockModel> listCmList = response.getListCmList();
+            List<OldListListComplexMockModel> listCmList = response.getListCmList();
             Assert.assertEquals(2, listCmList.size());
 
-            List<ComplextMockModel> cmList0 = listCmList.get(0).getCmList();
+            List<OldComplextMockModel> cmList0 = listCmList.get(0).getCmList();
             Assert.assertEquals(2, cmList0.size());
-            ModelCompareUtil.assertComplexModel(
+            ModelCompareUtil.assertOldComplexModel(
                 com.demo.sdk.std.mock.model.ComplextMockModel.getInstance(), cmList0.get(0));
-            ModelCompareUtil.assertComplexModel(
+            ModelCompareUtil.assertOldComplexModel(
                 com.demo.sdk.std.mock.model.ComplextMockModel.getInstance(), cmList0.get(1));
 
-            List<ComplextMockModel> cmList1 = listCmList.get(1).getCmList();
+            List<OldComplextMockModel> cmList1 = listCmList.get(1).getCmList();
             Assert.assertEquals(2, cmList1.size());
-            ModelCompareUtil.assertComplexModel(
+            ModelCompareUtil.assertOldComplexModel(
                 com.demo.sdk.std.mock.model.ComplextMockModel.getInstance(), cmList1.get(0));
-            ModelCompareUtil.assertComplexModel(
+            ModelCompareUtil.assertOldComplexModel(
                 com.demo.sdk.std.mock.model.ComplextMockModel.getInstance(), cmList1.get(1));
+
+            ResultSignUtil.checkXMLResult(response.getBody(), request);
 
         } catch (Exception e) {
             e.printStackTrace();
