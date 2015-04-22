@@ -41,6 +41,7 @@ public class StdMockSimpleAPI {
 
             Assert.assertTrue(response.isSuccess());
             Assert.assertEquals("10000", response.getErrorCode());
+            Assert.assertEquals("10000", response.getCode());
             Assert.assertEquals("Success", response.getMsg());
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
@@ -108,6 +109,7 @@ public class StdMockSimpleAPI {
 
             Assert.assertTrue(response.isSuccess());
             Assert.assertEquals("10000", response.getErrorCode());
+            Assert.assertEquals("10000", response.getCode());
             Assert.assertEquals("Success", response.getMsg());
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());

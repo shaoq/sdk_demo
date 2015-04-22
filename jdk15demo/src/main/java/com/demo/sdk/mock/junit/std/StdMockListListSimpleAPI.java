@@ -43,6 +43,7 @@ public class StdMockListListSimpleAPI {
 
             Assert.assertTrue(response.isSuccess());
             Assert.assertEquals("10000", response.getErrorCode());
+            Assert.assertEquals("10000", response.getCode());
             Assert.assertEquals("Success", response.getMsg());
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
@@ -101,6 +102,7 @@ public class StdMockListListSimpleAPI {
 
             Assert.assertFalse(response.isSuccess());
             Assert.assertEquals("40004", response.getErrorCode());
+            Assert.assertEquals("40004", response.getCode());
             Assert.assertEquals("Business Failed", response.getMsg());
             Assert.assertNotNull(response.getSubCode());
             Assert.assertNotNull(response.getSubMsg());
@@ -130,6 +132,7 @@ public class StdMockListListSimpleAPI {
 
             Assert.assertTrue(response.isSuccess());
             Assert.assertEquals("10000", response.getErrorCode());
+            Assert.assertEquals("10000", response.getCode());
             Assert.assertEquals("Success", response.getMsg());
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
@@ -188,6 +191,7 @@ public class StdMockListListSimpleAPI {
 
             Assert.assertFalse(response.isSuccess());
             Assert.assertEquals("40004", response.getErrorCode());
+            Assert.assertEquals("40004", response.getCode());
             Assert.assertEquals("Business Failed", response.getMsg());
             Assert.assertNotNull(response.getSubCode());
             Assert.assertNotNull(response.getSubMsg());
