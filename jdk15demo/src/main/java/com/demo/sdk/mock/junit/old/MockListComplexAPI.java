@@ -21,7 +21,7 @@ import com.demo.sdk.util.ModelCompareUtil;
 /**
  * 
  * @author jiehua
- * @version $Id: MockListComplexAPI.java, v 0.1 2015-4-17 …œŒÁ10:29:02 jiehua Exp $
+ * @version $Id: MockListComplexAPI.java, v 0.1 2015-4-17 ‰∏äÂçà10:29:02 jiehua Exp $
  */
 public class MockListComplexAPI {
 
@@ -31,7 +31,7 @@ public class MockListComplexAPI {
         AlipayClient alipayClient = AlipayClientUtil.getJSONInStance();
 
         AlipayMobilePublicMockListcomplexmodelApiRequest request = new AlipayMobilePublicMockListcomplexmodelApiRequest();
-        request.setBizContent("");
+        request.setBizContent("ÁπÅ‰ΩìÈ™∂È™∂Èæò„ÅÆ");
 
         try {
 
@@ -39,7 +39,7 @@ public class MockListComplexAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON ≥…π¶£∫");
+            LoggerUtil.info("JSON ÊàêÂäüÔºö");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -54,7 +54,7 @@ public class MockListComplexAPI {
             com.demo.sdk.std.mock.model.ComplextMockModel instance01 = com.demo.sdk.std.mock.model.ComplextMockModel
                 .getInstance();
 
-            // —È÷§Ω·π˚
+            // È™åËØÅÁªìÊûú
             Assert.assertEquals(2, cmModelList.size());
             ModelCompareUtil.assertOldComplexModel(instance00, cmModelList.get(0));
             ModelCompareUtil.assertOldComplexModel(instance01, cmModelList.get(1));
@@ -82,7 +82,7 @@ public class MockListComplexAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON  ß∞‹£∫");
+            LoggerUtil.info("JSON Â§±Ë¥•Ôºö");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -106,7 +106,7 @@ public class MockListComplexAPI {
         AlipayClient alipayClient = AlipayClientUtil.getXMLInStance();
 
         AlipayMobilePublicMockListcomplexmodelApiRequest request = new AlipayMobilePublicMockListcomplexmodelApiRequest();
-        request.setBizContent("");
+        request.setBizContent("ÁπÅ‰ΩìÈ™∂È™∂Èæò„ÅÆ");
 
         try {
 
@@ -114,7 +114,7 @@ public class MockListComplexAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON ≥…π¶£∫");
+            LoggerUtil.info("JSON ÊàêÂäüÔºö");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -129,7 +129,7 @@ public class MockListComplexAPI {
             com.demo.sdk.std.mock.model.ComplextMockModel instance01 = com.demo.sdk.std.mock.model.ComplextMockModel
                 .getInstance();
 
-            // —È÷§Ω·π˚
+            // È™åËØÅÁªìÊûú
             Assert.assertEquals(2, cmModelList.size());
             ModelCompareUtil.assertOldComplexModel(instance00, cmModelList.get(0));
             ModelCompareUtil.assertOldComplexModel(instance01, cmModelList.get(1));
@@ -157,7 +157,7 @@ public class MockListComplexAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("XML  ß∞‹£∫");
+            LoggerUtil.info("XML Â§±Ë¥•Ôºö");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());

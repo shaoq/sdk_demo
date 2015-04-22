@@ -18,7 +18,7 @@ import com.demo.sdk.util.LoggerUtil;
 /**
  * 
  * @author jiehua
- * @version $Id: MockPlaintAPI.java, v 0.1 2015-4-17 ÉÏÎç9:37:01 jiehua Exp $
+ * @version $Id: MockPlaintAPI.java, v 0.1 2015-4-17 ä¸Šåˆ9:37:01 jiehua Exp $
  */
 public class MockPlaintAPI {
 
@@ -30,14 +30,14 @@ public class MockPlaintAPI {
         try {
 
             AlipayMobilePublicMockPlaintApiRequest request = new AlipayMobilePublicMockPlaintApiRequest();
-            request.setBizContent("");
+            request.setBizContent("ç¹ä½“éª¶éª¶é¾˜ã®");
 
             AlipayMobilePublicMockPlaintApiResponse response = alipayClient.execute(request);
 
             SimpleMockModel expectModel = SimpleMockModel.getInstance();
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON ³É¹¦£º");
+            LoggerUtil.info("JSON æˆåŠŸï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -46,7 +46,7 @@ public class MockPlaintAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            // ÑéÖ¤½á¹û
+            // éªŒè¯ç»“æœ
             Assert.assertEquals(expectModel.getPrice_num() + "", response.getPriceNum());
             Assert.assertEquals(expectModel.getTrade_no(), response.getTradeNo());
             Assert.assertEquals(expectModel.getCount_items(), response.getCountItems().intValue());
@@ -75,7 +75,7 @@ public class MockPlaintAPI {
             AlipayMobilePublicMockPlaintApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON Ê§°Ü£º");
+            LoggerUtil.info("JSON å¤±è´¥ï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -101,14 +101,14 @@ public class MockPlaintAPI {
         try {
 
             AlipayMobilePublicMockPlaintApiRequest request = new AlipayMobilePublicMockPlaintApiRequest();
-            request.setBizContent("");
+            request.setBizContent("ç¹ä½“éª¶éª¶é¾˜ã®");
 
             AlipayMobilePublicMockPlaintApiResponse response = alipayClient.execute(request);
 
             SimpleMockModel expectModel = SimpleMockModel.getInstance();
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON ³É¹¦£º");
+            LoggerUtil.info("JSON æˆåŠŸï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -117,7 +117,7 @@ public class MockPlaintAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            // ÑéÖ¤½á¹û
+            // éªŒè¯ç»“æœ
             Assert.assertEquals(expectModel.getPrice_num() + "", response.getPriceNum());
             Assert.assertEquals(expectModel.getTrade_no(), response.getTradeNo());
             Assert.assertEquals(expectModel.getCount_items(), response.getCountItems().intValue());
@@ -146,7 +146,7 @@ public class MockPlaintAPI {
             AlipayMobilePublicMockPlaintApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("XML Ê§°Ü£º");
+            LoggerUtil.info("XML å¤±è´¥ï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());

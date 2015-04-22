@@ -130,7 +130,7 @@ public class SimpleMockModel implements Serializable {
         model.setHappen_time(new Date());
         model.setPrice_num(1.03f);
         model.setRight(true);
-        model.setTrade_no("tradeNo1238182811221");
+        model.setTrade_no("tradeNo1238182811221µÚÒ»¸ö");
 
         return model;
     }

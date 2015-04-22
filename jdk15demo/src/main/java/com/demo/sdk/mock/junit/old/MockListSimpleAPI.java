@@ -21,7 +21,7 @@ import com.demo.sdk.util.ModelCompareUtil;
 /**
  * 
  * @author jiehua
- * @version $Id: MockListSimpleAPI.java, v 0.1 2015-4-17 ÏÂÎç7:46:30 jiehua Exp $
+ * @version $Id: MockListSimpleAPI.java, v 0.1 2015-4-17 ä¸‹åˆ7:46:30 jiehua Exp $
  */
 public class MockListSimpleAPI {
 
@@ -30,7 +30,7 @@ public class MockListSimpleAPI {
 
         AlipayClient alipayClient = AlipayClientUtil.getJSONInStance();
         AlipayMobilePublicMockListsimplemodelApiRequest request = new AlipayMobilePublicMockListsimplemodelApiRequest();
-        request.setBizContent("");
+        request.setBizContent("ç¹ä½“éª¶éª¶é¾˜ã®");
 
         try {
 
@@ -38,7 +38,7 @@ public class MockListSimpleAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON ³É¹¦£º");
+            LoggerUtil.info("JSON æˆåŠŸï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -47,7 +47,7 @@ public class MockListSimpleAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            //ÑéÖ¤½á¹û
+            //éªŒè¯ç»“æœ
             List<SimpleMockModel> bizModelList = response.getBizModelList();
             Assert.assertNotNull(bizModelList);
             Assert.assertEquals(2, bizModelList.size());
@@ -77,7 +77,7 @@ public class MockListSimpleAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON Ê§°Ü£º");
+            LoggerUtil.info("JSON å¤±è´¥ï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -98,7 +98,7 @@ public class MockListSimpleAPI {
 
         AlipayClient alipayClient = AlipayClientUtil.getXMLInStance();
         AlipayMobilePublicMockListsimplemodelApiRequest request = new AlipayMobilePublicMockListsimplemodelApiRequest();
-        request.setBizContent("");
+        request.setBizContent("ç¹ä½“éª¶éª¶é¾˜ã®");
 
         try {
 
@@ -106,7 +106,7 @@ public class MockListSimpleAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON ³É¹¦£º");
+            LoggerUtil.info("JSON æˆåŠŸï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -115,7 +115,7 @@ public class MockListSimpleAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            //ÑéÖ¤½á¹û
+            //éªŒè¯ç»“æœ
             List<SimpleMockModel> bizModelList = response.getBizModelList();
             Assert.assertNotNull(bizModelList);
             Assert.assertEquals(2, bizModelList.size());
@@ -146,7 +146,7 @@ public class MockListSimpleAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("XML Ê§°Ü£º");
+            LoggerUtil.info("XML å¤±è´¥ï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());

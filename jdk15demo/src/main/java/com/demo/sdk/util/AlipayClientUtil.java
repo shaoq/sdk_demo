@@ -4,8 +4,6 @@
  */
 package com.demo.sdk.util;
 
-import java.lang.reflect.Field;
-
 import com.alipay.api.AlipayClient;
 import com.alipay.api.AlipayConstants;
 import com.alipay.api.DefaultAlipayClient;
@@ -23,7 +21,10 @@ public class AlipayClientUtil {
     private static final AlipayClient ALIPAY_JSON_CLIENT = new DefaultAlipayClient(
                                                              GateWayUtils.GATEWAY_URL,
                                                              GateWayUtils.APP_ID,
-                                                             GateWayUtils.PRIVATE_KEY);
+                                                             GateWayUtils.PRIVATE_KEY,
+                                                             AlipayConstants.FORMAT_JSON,
+                                                             AlipayConstants.CHARSET_UTF8,
+                                                             GateWayUtils.ALIPAY_PUBLIC_KEY);
 
     /**
      * XML客户端
@@ -31,23 +32,10 @@ public class AlipayClientUtil {
     private static final AlipayClient ALIPAY_XML_CLIENT  = new DefaultAlipayClient(
                                                              GateWayUtils.GATEWAY_URL,
                                                              GateWayUtils.APP_ID,
-                                                             GateWayUtils.PRIVATE_KEY);
-
-    static {
-
-        try {
-
-            Field declaredField = ALIPAY_XML_CLIENT.getClass().getDeclaredField("format");
-
-            declaredField.setAccessible(true);
-            declaredField.set(ALIPAY_XML_CLIENT, AlipayConstants.FORMAT_XML);
-
-        } catch (Exception e) {
-
-            e.printStackTrace();
-
-        }
-    }
+                                                             GateWayUtils.PRIVATE_KEY,
+                                                             AlipayConstants.FORMAT_XML,
+                                                             AlipayConstants.CHARSET_UTF8,
+                                                             GateWayUtils.ALIPAY_PUBLIC_KEY);
 
     /**
      * 获取网关实例

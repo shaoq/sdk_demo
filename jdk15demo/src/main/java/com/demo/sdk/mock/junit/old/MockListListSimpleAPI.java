@@ -22,7 +22,7 @@ import com.demo.sdk.util.ModelCompareUtil;
 /**
  * 
  * @author jiehua
- * @version $Id: MockListListSimpleAPI.java, v 0.1 2015-4-17 ÏÂÎç8:02:31 jiehua Exp $
+ * @version $Id: MockListListSimpleAPI.java, v 0.1 2015-4-17 ä¸‹åˆ8:02:31 jiehua Exp $
  */
 public class MockListListSimpleAPI {
 
@@ -32,14 +32,14 @@ public class MockListListSimpleAPI {
         AlipayClient alipayClient = AlipayClientUtil.getJSONInStance();
 
         AlipayMobilePublicMockListsmlistApiRequest request = new AlipayMobilePublicMockListsmlistApiRequest();
-        request.setBizContent("");
+        request.setBizContent("ç¹ä½“éª¶éª¶é¾˜ã®");
 
         try {
 
             AlipayMobilePublicMockListsmlistApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON ³É¹¦£º");
+            LoggerUtil.info("JSON æˆåŠŸï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -48,7 +48,7 @@ public class MockListListSimpleAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            // ÑéÖ¤½á¹û
+            // éªŒè¯ç»“æœ
             List<ListListSmMockModel> listSmModelList = response.getListSmModelList();
             Assert.assertEquals(2, listSmModelList.size());
             ListListSmMockModel listListSmMockModel0 = listSmModelList.get(0);
@@ -97,7 +97,7 @@ public class MockListListSimpleAPI {
             AlipayMobilePublicMockListsmlistApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON Ê§°Ü£º");
+            LoggerUtil.info("JSON å¤±è´¥ï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -120,14 +120,14 @@ public class MockListListSimpleAPI {
         AlipayClient alipayClient = AlipayClientUtil.getXMLInStance();
 
         AlipayMobilePublicMockListsmlistApiRequest request = new AlipayMobilePublicMockListsmlistApiRequest();
-        request.setBizContent("");
+        request.setBizContent("ç¹ä½“éª¶éª¶é¾˜ã®");
 
         try {
 
             AlipayMobilePublicMockListsmlistApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON ³É¹¦£º");
+            LoggerUtil.info("JSON æˆåŠŸï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -136,7 +136,7 @@ public class MockListListSimpleAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            // ÑéÖ¤½á¹û
+            // éªŒè¯ç»“æœ
             List<ListListSmMockModel> listSmModelList = response.getListSmModelList();
             Assert.assertEquals(2, listSmModelList.size());
             ListListSmMockModel listListSmMockModel0 = listSmModelList.get(0);
@@ -185,7 +185,7 @@ public class MockListListSimpleAPI {
             AlipayMobilePublicMockListsmlistApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("XML Ê§°Ü£º");
+            LoggerUtil.info("XML å¤±è´¥ï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());

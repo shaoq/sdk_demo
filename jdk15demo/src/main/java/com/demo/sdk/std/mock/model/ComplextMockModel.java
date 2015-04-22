@@ -87,7 +87,7 @@ public class ComplextMockModel implements Serializable {
 
         model.setBiz_num(11);
 
-        model.setBiz_type("AAA");
+        model.setBiz_type("AAAµÚÒ»¸ö");
 
         model.setBiz_model(SimpleMockModel.getInstance());
 

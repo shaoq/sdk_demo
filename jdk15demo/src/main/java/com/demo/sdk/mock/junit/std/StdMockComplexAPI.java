@@ -19,7 +19,7 @@ import com.demo.sdk.util.ModelCompareUtil;
 /**
  * 
  * @author jiehua
- * @version $Id: StdMockComplexAPI.java, v 0.1 2015-4-17 ÏÂÎç7:27:56 jiehua Exp $
+ * @version $Id: StdMockComplexAPI.java, v 0.1 2015-4-17 æ¶“ï¿½ï¿½ï¿½ï¿½7:27:56 jiehua Exp $
  */
 public class StdMockComplexAPI {
 
@@ -30,7 +30,7 @@ public class StdMockComplexAPI {
 
         AlipayMobilePublicStdMockComplexmodelApiRequest request = new AlipayMobilePublicStdMockComplexmodelApiRequest();
 
-        request.setBizContent("");
+        request.setBizContent("å»°é ”é˜¿æœã®");
 
         try {
 
@@ -38,7 +38,7 @@ public class StdMockComplexAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON ³É¹¦£º");
+            LoggerUtil.info("JSON æˆåŠŸï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -47,7 +47,7 @@ public class StdMockComplexAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            // ÑéÖ¤½á¹û
+            // æ¥ ï¿½ç’‡ï¿½ç¼ï¿½ï¿½ï¿½ï¿½
 
             ComplextMockModel complexModel = ComplextMockModel.getInstance();
 
@@ -80,7 +80,7 @@ public class StdMockComplexAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON Ê§°Ü£º");
+            LoggerUtil.info("JSON å¤±è´¥:");
             LoggerUtil.info(response.getBody());
 
             Assert.assertFalse(response.isSuccess());
@@ -104,7 +104,7 @@ public class StdMockComplexAPI {
 
         AlipayMobilePublicStdMockComplexmodelApiRequest request = new AlipayMobilePublicStdMockComplexmodelApiRequest();
 
-        request.setBizContent("");
+        request.setBizContent("ç¹ä½“éª¶éª¶é¾˜ã®");
 
         try {
 
@@ -112,7 +112,7 @@ public class StdMockComplexAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("XML ³É¹¦£º");
+            LoggerUtil.info("XML æˆåŠŸ:");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -121,7 +121,7 @@ public class StdMockComplexAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            // ÑéÖ¤½á¹û
+            // æ¥ ï¿½ç’‡ï¿½ç¼ï¿½ï¿½ï¿½ï¿½
 
             ComplextMockModel complexModel = ComplextMockModel.getInstance();
 
@@ -152,7 +152,7 @@ public class StdMockComplexAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("XML Ê§°Ü£º");
+            LoggerUtil.info("XML å¤±è´¥:");
             LoggerUtil.info(response.getBody());
 
             Assert.assertFalse(response.isSuccess());

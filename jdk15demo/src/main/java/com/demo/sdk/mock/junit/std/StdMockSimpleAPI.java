@@ -18,7 +18,7 @@ import com.demo.sdk.util.ModelCompareUtil;
 /**
  * 
  * @author jiehua
- * @version $Id: StdMockSimpleAPI.java, v 0.1 2015-4-17 ÏÂÎç5:05:34 jiehua Exp $
+ * @version $Id: StdMockSimpleAPI.java, v 0.1 2015-4-17 ä¸‹åˆ5:05:34 jiehua Exp $
  */
 public class StdMockSimpleAPI {
 
@@ -28,7 +28,7 @@ public class StdMockSimpleAPI {
         AlipayClient alipayClient = AlipayClientUtil.getJSONInStance();
 
         AlipayMobilePublicStdMockSimplemodelApiRequest request = new AlipayMobilePublicStdMockSimplemodelApiRequest();
-        request.setBizContent("");
+        request.setBizContent("ç¹ä½“éª¶éª¶é¾˜ã®");
 
         try {
 
@@ -36,7 +36,7 @@ public class StdMockSimpleAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON ³É¹¦£º");
+            LoggerUtil.info("JSON æˆåŠŸï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -45,7 +45,7 @@ public class StdMockSimpleAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            // ÑéÖ¤½á¹û
+            // éªŒè¯ç»“æœ
             ModelCompareUtil.assertPlaintModel(SimpleMockModel.getInstance(),
                 response.getBizModel());
 
@@ -73,7 +73,7 @@ public class StdMockSimpleAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON Ê§°Ü£º");
+            LoggerUtil.info("JSON å¤±è´¥ï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertFalse(response.isSuccess());
@@ -95,7 +95,7 @@ public class StdMockSimpleAPI {
         AlipayClient alipayClient = AlipayClientUtil.getXMLInStance();
 
         AlipayMobilePublicStdMockSimplemodelApiRequest request = new AlipayMobilePublicStdMockSimplemodelApiRequest();
-        request.setBizContent("");
+        request.setBizContent("ç¹ä½“éª¶éª¶é¾˜ã®");
 
         try {
 
@@ -103,7 +103,7 @@ public class StdMockSimpleAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("XML ³É¹¦£º");
+            LoggerUtil.info("XML æˆåŠŸï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -112,7 +112,7 @@ public class StdMockSimpleAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            // ÑéÖ¤½á¹û
+            // éªŒè¯ç»“æœ
             ModelCompareUtil.assertPlaintModel(SimpleMockModel.getInstance(),
                 response.getBizModel());
 
@@ -138,7 +138,7 @@ public class StdMockSimpleAPI {
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("XML Ê§°Ü£º");
+            LoggerUtil.info("XML å¤±è´¥ï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertFalse(response.isSuccess());

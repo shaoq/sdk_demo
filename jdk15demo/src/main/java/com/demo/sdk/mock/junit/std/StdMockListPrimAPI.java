@@ -20,7 +20,7 @@ import com.demo.sdk.util.LoggerUtil;
 /**
  * 
  * @author jiehua
- * @version $Id: StdMockListPrimAPI.java, v 0.1 2015-4-17 ÏÂÎç7:40:49 jiehua Exp $
+ * @version $Id: StdMockListPrimAPI.java, v 0.1 2015-4-17 ä¸‹åˆ7:40:49 jiehua Exp $
  */
 public class StdMockListPrimAPI {
 
@@ -31,14 +31,14 @@ public class StdMockListPrimAPI {
 
         AlipayMobilePublicStdMockListprimApiRequest request = new AlipayMobilePublicStdMockListprimApiRequest();
 
-        request.setBizContent("");
+        request.setBizContent("ç¹ä½“éª¶éª¶é¾˜ã®");
 
         try {
 
             AlipayMobilePublicStdMockListprimApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON ³É¹¦£º");
+            LoggerUtil.info("JSON æˆåŠŸï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -47,7 +47,7 @@ public class StdMockListPrimAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            // ÑéÖ¤½á¹û
+            // éªŒè¯ç»“æœ
             List<String> userIdList = response.getUserIdList();
 
             List<String> user_id_list = new ArrayList<String>();
@@ -77,7 +77,7 @@ public class StdMockListPrimAPI {
 
             AlipayMobilePublicStdMockListprimApiResponse response = alipayClient.execute(request);
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("JSON Ê§°Ü£º");
+            LoggerUtil.info("JSON å¤±è´¥ï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertFalse(response.isSuccess());
@@ -101,14 +101,14 @@ public class StdMockListPrimAPI {
 
         AlipayMobilePublicStdMockListprimApiRequest request = new AlipayMobilePublicStdMockListprimApiRequest();
 
-        request.setBizContent("");
+        request.setBizContent("ç¹ä½“éª¶éª¶é¾˜ã®");
 
         try {
 
             AlipayMobilePublicStdMockListprimApiResponse response = alipayClient.execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("XML ³É¹¦£º");
+            LoggerUtil.info("XML æˆåŠŸï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
@@ -117,7 +117,7 @@ public class StdMockListPrimAPI {
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
 
-            // ÑéÖ¤½á¹û
+            // éªŒè¯ç»“æœ
             List<String> userIdList = response.getUserIdList();
 
             List<String> user_id_list = new ArrayList<String>();
@@ -147,7 +147,7 @@ public class StdMockListPrimAPI {
 
             AlipayMobilePublicStdMockListprimApiResponse response = alipayClient.execute(request);
             LoggerUtil.info("===API: " + request.getApiMethodName());
-            LoggerUtil.info("XML Ê§°Ü£º");
+            LoggerUtil.info("XML å¤±è´¥ï¼š");
             LoggerUtil.info(response.getBody());
 
             Assert.assertFalse(response.isSuccess());

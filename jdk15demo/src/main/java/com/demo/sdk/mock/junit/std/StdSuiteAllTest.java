@@ -11,7 +11,7 @@ import org.junit.runners.Suite.SuiteClasses;
 /**
  * 标准网关测试集合
  *  
- * @author jiehua
+ * @author jie.hua
  * @version $Id: StdSuiteTest.java, v 0.1 2015-4-20 上午10:57:59 jiehua Exp $
  */
 @RunWith(Suite.class)
