@@ -130,7 +130,8 @@ public class SimpleMockModel implements Serializable {
         model.setHappen_time(new Date());
         model.setPrice_num(1.03f);
         model.setRight(true);
-        model.setTrade_no("tradeNo1238182811221µÚÒ»¸ö");
+        model
+            .setTrade_no("https://mobilecodec.alipay.com/show.htm?code=pvj4hi212zvdbk05bb&picSize=M");
 
         return model;
     }

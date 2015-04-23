@@ -2,7 +2,7 @@
  * Alipay.com Inc.
  * Copyright (c) 2004-2015 All Rights Reserved.
  */
-package com.demo.sdk.mock.junit.std;
+package com.demo.sdk.mock.junit.old;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import junit.framework.TestCase;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.domain.ListListSmMockModel;
 import com.alipay.api.domain.SimpleMockModel;
-import com.alipay.api.request.AlipayMobilePublicStdMockListsmlistApiRequest;
-import com.alipay.api.response.AlipayMobilePublicStdMockListsmlistApiResponse;
+import com.alipay.api.request.AlipayMobilePublicMockListsmlistApiRequest;
+import com.alipay.api.response.AlipayMobilePublicMockListsmlistApiResponse;
 import com.demo.sdk.util.AlipayClientUtil;
 import com.demo.sdk.util.LoggerUtil;
 import com.demo.sdk.util.ModelCompareUtil;
@@ -22,28 +22,28 @@ import com.demo.sdk.util.StringUtil;
 /**
  * 
  * @author jiehua
- * @version $Id: StdMockListListSimpleAPI.java, v 0.1 2015-4-17 涓����8:02:31 jiehua Exp $
+ * @version $Id: MockListListSimpleAPI.java, v 0.1 2015-4-17 涓����8:02:31 jiehua Exp $
  */
-public class StdMockListListSimpleAPI extends TestCase {
+public class MockListListSimpleAPI extends TestCase {
 
     public void testJSONListListSimple() {
 
         AlipayClient alipayClient = AlipayClientUtil.getJSONInStance();
 
-        AlipayMobilePublicStdMockListsmlistApiRequest request = new AlipayMobilePublicStdMockListsmlistApiRequest();
+        AlipayMobilePublicMockListsmlistApiRequest request = new AlipayMobilePublicMockListsmlistApiRequest();
         request.setBizContent("貣龞哈迪大");
 
         try {
 
-            AlipayMobilePublicStdMockListsmlistApiResponse response = (AlipayMobilePublicStdMockListsmlistApiResponse) alipayClient
+            AlipayMobilePublicMockListsmlistApiResponse response = (AlipayMobilePublicMockListsmlistApiResponse) alipayClient
                 .execute(request);
             LoggerUtil.info("===API: " + request.getApiMethodName());
             LoggerUtil.info("JSON 成功：");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
-            Assert.assertEquals("10000", response.getErrorCode());
-            Assert.assertEquals("Success", response.getMsg());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getErrorCode());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getMsg());
             Assert.assertEquals(StringUtil.EMPTY_STRING, response.getSubCode());
             Assert.assertEquals(StringUtil.EMPTY_STRING, response.getSubMsg());
 
@@ -87,25 +87,23 @@ public class StdMockListListSimpleAPI extends TestCase {
 
         AlipayClient alipayClient = AlipayClientUtil.getJSONInStance();
 
-        AlipayMobilePublicStdMockListsmlistApiRequest request = new AlipayMobilePublicStdMockListsmlistApiRequest();
+        AlipayMobilePublicMockListsmlistApiRequest request = new AlipayMobilePublicMockListsmlistApiRequest();
         request.setBizContent("false");
 
         try {
 
-            AlipayMobilePublicStdMockListsmlistApiResponse response = (AlipayMobilePublicStdMockListsmlistApiResponse) alipayClient
+            AlipayMobilePublicMockListsmlistApiResponse response = (AlipayMobilePublicMockListsmlistApiResponse) alipayClient
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
             LoggerUtil.info("JSON 失败：");
             LoggerUtil.info(response.getBody());
 
-            Assert.assertFalse(response.isSuccess());
-            Assert.assertEquals("40004", response.getErrorCode());
-            Assert.assertEquals("Business Failed", response.getMsg());
-            Assert.assertNotNull(response.getSubCode());
-            Assert.assertNotNull(response.getSubMsg());
-            Assert.assertNotSame(StringUtil.EMPTY_STRING, response.getSubCode());
-            Assert.assertNotSame(StringUtil.EMPTY_STRING, response.getSubMsg());
+            Assert.assertTrue(response.isSuccess());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getErrorCode());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getMsg());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getSubCode());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getSubMsg());
 
         } catch (Exception e) {
 
@@ -119,20 +117,20 @@ public class StdMockListListSimpleAPI extends TestCase {
 
         AlipayClient alipayClient = AlipayClientUtil.getXMLInStance();
 
-        AlipayMobilePublicStdMockListsmlistApiRequest request = new AlipayMobilePublicStdMockListsmlistApiRequest();
+        AlipayMobilePublicMockListsmlistApiRequest request = new AlipayMobilePublicMockListsmlistApiRequest();
         request.setBizContent("貣龞哈迪大");
 
         try {
 
-            AlipayMobilePublicStdMockListsmlistApiResponse response = (AlipayMobilePublicStdMockListsmlistApiResponse) alipayClient
+            AlipayMobilePublicMockListsmlistApiResponse response = (AlipayMobilePublicMockListsmlistApiResponse) alipayClient
                 .execute(request);
             LoggerUtil.info("===API: " + request.getApiMethodName());
             LoggerUtil.info("XML 成功：");
             LoggerUtil.info(response.getBody());
 
             Assert.assertTrue(response.isSuccess());
-            Assert.assertEquals("10000", response.getErrorCode());
-            Assert.assertEquals("Success", response.getMsg());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getErrorCode());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getMsg());
             Assert.assertEquals(StringUtil.EMPTY_STRING, response.getSubCode());
             Assert.assertEquals(StringUtil.EMPTY_STRING, response.getSubMsg());
 
@@ -176,25 +174,23 @@ public class StdMockListListSimpleAPI extends TestCase {
 
         AlipayClient alipayClient = AlipayClientUtil.getXMLInStance();
 
-        AlipayMobilePublicStdMockListsmlistApiRequest request = new AlipayMobilePublicStdMockListsmlistApiRequest();
+        AlipayMobilePublicMockListsmlistApiRequest request = new AlipayMobilePublicMockListsmlistApiRequest();
         request.setBizContent("false");
 
         try {
 
-            AlipayMobilePublicStdMockListsmlistApiResponse response = (AlipayMobilePublicStdMockListsmlistApiResponse) alipayClient
+            AlipayMobilePublicMockListsmlistApiResponse response = (AlipayMobilePublicMockListsmlistApiResponse) alipayClient
                 .execute(request);
 
             LoggerUtil.info("===API: " + request.getApiMethodName());
             LoggerUtil.info("XML 失败：");
             LoggerUtil.info(response.getBody());
 
-            Assert.assertFalse(response.isSuccess());
-            Assert.assertEquals("40004", response.getErrorCode());
-            Assert.assertEquals("Business Failed", response.getMsg());
-            Assert.assertNotNull(response.getSubCode());
-            Assert.assertNotNull(response.getSubMsg());
-            Assert.assertNotSame(StringUtil.EMPTY_STRING, response.getSubCode());
-            Assert.assertNotSame(StringUtil.EMPTY_STRING, response.getSubMsg());
+            Assert.assertTrue(response.isSuccess());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getErrorCode());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getMsg());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getSubCode());
+            Assert.assertEquals(StringUtil.EMPTY_STRING, response.getSubMsg());
 
         } catch (Exception e) {
 

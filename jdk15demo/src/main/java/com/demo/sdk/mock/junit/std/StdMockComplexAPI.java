@@ -8,6 +8,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.request.AlipayMobilePublicStdMockComplexmodelApiRequest;
 import com.alipay.api.response.AlipayMobilePublicStdMockComplexmodelApiResponse;
@@ -47,6 +48,13 @@ public class StdMockComplexAPI {
             Assert.assertEquals("Success", response.getMsg());
             Assert.assertNull(response.getSubCode());
             Assert.assertNull(response.getSubMsg());
+
+            JSONObject parse = (JSONObject) JSONObject.parse(response.getBody());
+
+            JSONObject reponseModel = (JSONObject) parse
+                .get("alipay_mobile_public_std_mock_complexmodel_api_response");
+            JSONObject x = (JSONObject) reponseModel.get("biz_model");
+            System.out.println(x.getString("trade_no"));
 
             // 楠�璇�缁����
 
